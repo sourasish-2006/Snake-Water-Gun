@@ -1,0 +1,43 @@
+import random
+print("Welcome to Snake Water Gun game!!!!!")
+print(
+"The Snake, Water, Gun game is a two-player game, " \
+"similar to Rock, Paper, Scissors, " \
+"where players choose one of three options: snake, water, or gun. " \
+"The winner is determined by these rules: snake drinks the water, water drowns the gun, and the gun shoots the snake")
+print("\nPress S/s for Snake, W/w for Water and G/g for Gun")
+rounds=5
+user_points=0
+comp_points=0
+options=["s","w","g"]
+for i in range(1,rounds+1):
+    print(f"\nRound {i}:")
+    user_choice=input("Enter your choice: ").lower()
+    if user_choice not in options:
+        print("Invalid input. Please choose S, W, or G.")
+        continue
+    comp_choice=random.choice(options)
+    print(f"Computer chose: {comp_choice.upper()}")
+    if user_choice == comp_choice:
+        print("It's a tie!")
+    elif (
+        (user_choice == "s" and comp_choice == "w") or
+        (user_choice == "w" and comp_choice == "g") or
+        (user_choice == "g" and comp_choice == "s")
+    ):
+        print("You won this round!!")
+        user_points += 1
+    else:
+        print("Computer won this round!!")
+        comp_points += 1
+print("\nGame Over!!!!!!")
+print(f"Your points: {user_points}")
+print(f"Computer points: {comp_points}")
+if user_points > comp_points:
+    print("Congratulations! You win the game!")
+elif user_points < comp_points:
+    print("Computer wins the game! Better luck next time.")
+else:
+    print("It's a tie game!")
+
+
