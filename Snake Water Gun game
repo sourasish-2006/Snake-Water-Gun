@@ -1,43 +1,98 @@
 import random
-print("Welcome to Snake Water Gun game!!!!!")
-print(
-"The Snake, Water, Gun game is a two-player game, " \
-"similar to Rock, Paper, Scissors, " \
-"where players choose one of three options: snake, water, or gun. " \
-"The winner is determined by these rules: snake drinks the water, water drowns the gun, and the gun shoots the snake")
-print("\nPress S/s for Snake, W/w for Water and G/g for Gun")
-rounds=5
-user_points=0
-comp_points=0
-options=["s","w","g"]
-for i in range(1,rounds+1):
-    print(f"\nRound {i}:")
-    user_choice=input("Enter your choice: ").lower()
-    if user_choice not in options:
-        print("Invalid input. Please choose S, W, or G.")
-        continue
-    comp_choice=random.choice(options)
-    print(f"Computer chose: {comp_choice.upper()}")
+
+def print_welcome_message():
+    """Prints the welcome message and game rules."""
+    print("Welcome to the Snake Water Gun Game!")
+    print("------------------------------------")
+    print(
+        "This is a two-player game where you play against the computer.\n"
+        "The winner is determined by these rules:\n"
+        "- Snake drinks the Water (Snake wins)\n"
+        "- Water rusts the Gun (Water wins)\n"
+        "- Gun shoots the Snake (Gun wins)"
+    )
+    print("\nPress 'S' for Snake, 'W' for Water, and 'G' for Gun.")
+    print("------------------------------------\n")
+
+def get_user_choice():
+    """Prompts the user for their choice and validates it."""
+    while True:
+        user_choice = input("Enter your choice (S, W, G): ").lower()
+        if user_choice in ["s", "w", "g"]:
+            return user_choice
+        else:
+            print("Invalid input. Please choose S, W, or G.")
+
+def get_computer_choice():
+    """Generates a random choice for the computer."""
+    return random.choice(["s", "w", "g"])
+
+def determine_winner(user_choice, comp_choice):
+    """
+    Determines the winner of a single round.
+    Returns:
+        'user': if the user wins
+        'comp': if the computer wins
+        'tie': if it's a tie
+    """
     if user_choice == comp_choice:
-        print("It's a tie!")
+        return "tie"
     elif (
         (user_choice == "s" and comp_choice == "w") or
         (user_choice == "w" and comp_choice == "g") or
         (user_choice == "g" and comp_choice == "s")
     ):
-        print("You won this round!!")
-        user_points += 1
+        return "user"
     else:
-        print("Computer won this round!!")
-        comp_points += 1
-print("\nGame Over!!!!!!")
-print(f"Your points: {user_points}")
-print(f"Computer points: {comp_points}")
-if user_points > comp_points:
-    print("Congratulations! You win the game!")
-elif user_points < comp_points:
-    print("Computer wins the game! Better luck next time.")
-else:
-    print("It's a tie game!")
+        return "comp"
 
+def print_final_result(user_points, comp_points):
+    """Prints the final game result and scores."""
+    print("\n========== Game Over ==========")
+    print(f"Your final score: {user_points}")
+    print(f"Computer's final score: {comp_points}")
+
+    if user_points > comp_points:
+        print("\nCongratulations! You won the game! 🎉")
+    elif user_points < comp_points:
+        print("\nComputer wins the game! Better luck next time. 🤖")
+    else:
+        print("\nIt's a tie game! Well played. 🤝")
+    print("=============================")
+
+
+def game_loop():
+    """The main loop for the game."""
+    rounds = 5
+    user_points = 0
+    comp_points = 0
+    options_map = {"s": "Snake", "w": "Water", "g": "Gun"}
+
+    for i in range(1, rounds + 1):
+        print(f"\n--- Round {i} of {rounds} ---")
+        user_choice = get_user_choice()
+        comp_choice = get_computer_choice()
+
+        print(f"You chose: {options_map[user_choice]}")
+        print(f"Computer chose: {options_map[comp_choice]}")
+
+        winner = determine_winner(user_choice, comp_choice)
+
+        if winner == "tie":
+            print("It's a tie!")
+        elif winner == "user":
+            print("You won this round!")
+            user_points += 1
+        else:
+            print("The computer won this round!")
+            comp_points += 1
+        
+        print(f"Score -> You: {user_points}, Computer: {comp_points}")
+
+    print_final_result(user_points, comp_points)
+
+
+if __name__ == "__main__":
+    print_welcome_message()
+    game_loop()
 
