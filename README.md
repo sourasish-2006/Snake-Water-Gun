@@ -1,115 +1,79 @@
-My Repo
-A brief, one-sentence description of what this repository contains. For example: "This repository serves as a personal collection of various coding projects, algorithms, and learning exercises."
+Snake Water Gun Game 🐍💧🔫
+A classic command-line implementation of the Snake-Water-Gun game, a variation of Rock-Paper-Scissors. This is a simple, text-based game where you play against the computer.
 
-🚀 Overview
-This repository is a central hub for my personal coding projects and experiments. It includes a diverse range of code, from small scripts and data structures to more complex applications developed during my learning journey and personal exploration.
+📜 Game Rules
+The game is a duel between the player and the computer. The winner is decided based on the following rules:
 
-The primary goal of this repository is to:
+Snake vs. Water: The snake drinks the water and wins.
 
-Showcase my coding skills and progress.
+Water vs. Gun: The water causes the gun to rust, so water wins.
 
-Provide easy access to my work.
+Gun vs. Snake: The gun shoots the snake, and the gun wins.
 
-Serve as a reference for various coding challenges and solutions.
-
-Document my learning process in different programming languages and technologies.
+If both the player and the computer choose the same option, the round is a tie.
 
 ✨ Features
-Diverse Projects: Contains code written in multiple programming languages (e.g., Python, JavaScript, Java, C++).
+Interactive Gameplay: Play directly in your terminal.
 
-Organized Structure: Projects are typically organized into clear directories based on language, topic, or project type.
+Randomized Choices: The computer's choice is completely random in each round.
 
-Problem Solving: Includes solutions to algorithmic problems, data structure implementations, and competitive programming exercises.
+Score Tracking: The game keeps track of your score and the computer's score.
 
-Learning Resources: May contain code examples and notes from tutorials, courses, or personal studies.
+Best of 5: The game runs for a total of 5 rounds, and the player with the most points at the end wins.
 
-Version Controlled: All changes are tracked using Git, allowing for easy rollback and collaboration (if applicable).
+🚀 How to Play
+To play the game, you need to have Python installed on your system.
 
-🛠️ Getting Started
-To get a local copy of this repository up and running, follow these simple steps.
+1. Clone the repository:
 
-Prerequisites
-You will need Git installed on your system.
+git clone [https://github.com/your-username/snake-water-gun.git](https://github.com/your-username/snake-water-gun.git)
 
-Download Git
+2. Navigate to the project directory:
 
-Depending on the specific projects you want to run, you might also need:
+cd snake-water-gun
 
-Python (with pip)
+3. Run the game:
 
-Node.js (with npm or yarn)
+python main.py
 
-Java Development Kit (JDK)
+4. Follow the on-screen instructions:
+You will be prompted to enter S for Snake, W for Water, or G for Gun.
 
-C++ Compiler (e.g., GCC)
+Example Gameplay Session
+Welcome to the Snake Water Gun Game!
+------------------------------------
+This is a two-player game where you play against the computer.
+The winner is determined by these rules:
+- Snake drinks the Water (Snake wins)
+- Water rusts the Gun (Water wins)
+- Gun shoots the Snake (Gun wins)
 
-Any other language-specific runtimes or package managers.
+Press 'S' for Snake, 'W' for Water, and 'G' for Gun.
+------------------------------------
 
-Installation
-Clone the repository:
+--- Round 1 of 5 ---
+Enter your choice (S, W, G): s
+You chose: Snake
+Computer chose: Water
+You won this round!
+Score -> You: 1, Computer: 0
 
-git clone https://github.com/your-username/your-repository-name.git
-
-Navigate into the repository directory:
-
-cd your-repository-name
-
-Explore the projects:
-Each project or language directory will likely have its own README.md with specific instructions on how to set up and run that particular code.
-
-🚀 Usage
-Since this repository contains various types of code, the usage will differ for each project. Generally, you can expect to:
-
-Run Python scripts:
-
-python path/to/your_script.py
-
-Execute JavaScript files (Node.js):
-
-node path/to/your_script.js
-
-Compile and run C++ programs:
-
-g++ path/to/your_program.cpp -o your_program
-./your_program
-
-Run Java programs:
-
-javac path/to/YourProgram.java
-java YourProgram
-
-Always refer to the specific README.md file within each project directory for detailed instructions.
+--- Round 2 of 5 ---
+...
 
 🤝 Contributing
-While this is primarily a personal repository, I am open to suggestions, bug reports, or even pull requests for improvements or alternative solutions.
-
-If you'd like to contribute:
+Contributions are welcome! If you have ideas for new features, find a bug, or want to improve the code, please feel free to:
 
 Fork the repository.
 
-Create your feature branch: git checkout -b feature/AmazingFeature
+Create a new branch (git checkout -b feature/your-feature-name).
 
-Commit your changes: git commit -m 'Add some AmazingFeature'
+Make your changes.
 
-Push to the branch: git push origin feature/AmazingFeature
+Commit your changes (git commit -m 'Add some feature').
+
+Push to the branch (git push origin feature/your-feature-name).
 
 Open a Pull Request.
 
-Please ensure your code adheres to good practices, is well-commented, and includes any necessary tests.
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-(If you don't have a LICENSE file, you can choose one from choosealicense.com and add it to your repository. MIT is a very permissive and common choice.)
-
-✉️ Contact
-Your Name/GitHub Username - Your GitHub Profile Link
-
-Email - your.email@example.com
-
-LinkedIn - Your LinkedIn Profile Link (Optional)
-
-Project Link: https://github.com/your-username/your-repository-name
-
-🙏 Acknowledgements
-(Optional: List any resources, tutorials, or people who helped you or inspired parts of your code.)
+Enjoy the game!d you or inspired parts of your code.)
